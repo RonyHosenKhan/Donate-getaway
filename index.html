@@ -1,11 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate-page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donation Page</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" />
+  <style>
+    .active {
+      background-color: #10b981;
+      color: white;
+    }
+  </style>
 </head>
-<body>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md bg-blue-100 space-x-4 sticky top-0 flex justify-between items-center p-4 z-50">
+    <button class="bg-green-500 ml-0 p-1 lg:p-3 text-black font-semibold rounded-md">Blog</button>
     
+    <div class="flex space-x-2">
+      <img class="w-10 h-10  " src="assets/logo.png" alt="">
+      <h1 class="text-l lg:text-3xl text-black font-bold">Donate For Mankind</h1>
+    </div>
+    
+    <div class="flex items-center space-x-2 pr-4">
+      <img src="assets/coin.png" alt="Coin Icon" class="w-6 h-6">
+      <span id="accountBalance" class="text-gray-700 lg:text-xl font-bold">5000</span>
+     
+    </div>
+  </nav>
+
+  <!-- Donation and History Buttons (Sticky) -->
+  <div class="bg-white shadow-md sticky top-16 z-50 text-center space-x-2 py-4">
+    <button id="donationBtn" class="bg-green-500 text-white px-4 py-2 rounded-md">Donation</button>
+    <button id="historyBtn" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-md">History</button>
+  </div>
+
+  
+    
+    <!-- Donation Card 1 -->
+   <!-- Donation Cards Section (Vertical Layout) -->
+<section id="donationSection" class="mt-8 grid grid-cols-1 gap-6 px-4">
+
+  <!-- Donation Card 1 -->
+  <div class="hero bg-white p-4 rounded-lg">
+    <div class="hero-content flex-col lg:flex-row">
+      <img src="assets/noakhali.png" class="w-3/4 lg:max-w-sm rounded-lg shadow-2xl" />
+      <div class="ml-4">
+        <div class="flex items-center mb-2">
+         <div class="flex space-x-2">
+          <img src="assets/coin.png" alt="Coin Icon" class="w-5 h-5">
+          <span class="text-gray-700 "><span class="currentAmount1 font-semibold text-xl">0</span></span>
+         </div>
+        </div>
+        <h2 class="text-xl lg:text-3xl text-black font-bold">Donate for Flood at Noakhali, Bangladesh</h2>
+        <p class="py-4"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+        <input type="text" id="donationAmount1" class="mt-2 border rounded px-2 py-1 w-7/8 lg:w-1/2 bg-white" placeholder="Enter Amount">
+        <button onclick="donate(1)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded-md">Donate Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donation Card 2 -->
+  <div class="hero bg-white p-4 rounded-lg">
+    <div class="hero-content flex-col lg:flex-row">
+      <img src="assets/feni.png" class="w-3/4 lg:max-w-sm rounded-lg shadow-2xl" />
+      <div class="ml-4">
+        <div class="flex items-center mb-2">
+          <div class="flex space-x-2">
+            <img src="assets/coin.png" alt="Coin Icon" class="w-5 h-5">
+            <span class="text-gray-700 "><span class="currentAmount2 font-semibold text-xl">0</span></span>
+           </div>
+        </div>
+        <h2 class="text-xl lg:text-3xl text-black font-bold">Donate for Flood Relief in Feni,Bangladesh</h2>
+        <p class="py-4">The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need.</p>
+        <input type="text" id="donationAmount2" class="mt-2 border rounded px-2 py-1 w-7/8 lg:w-1/2 bg-white" placeholder="Enter Amount">
+        <button onclick="donate(2)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded-md">Donate Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Donation Card 3 -->
+  <div class="hero bg-white p-4 rounded-lg">
+    <div class="hero-content flex-col lg:flex-row">
+      <img src="assets/quota-protest.png" class="w-3/4 lg:max-w-sm rounded-lg shadow-2xl" />
+      <div class="ml-4">
+        <div class="flex items-center mb-2">
+          <div class="flex space-x-2">
+            <img src="assets/coin.png" alt="Coin Icon" class="w-5 h-5">
+            <span class="text-gray-700 "><span class="currentAmount3 font-semibold text-xl">0</span></span>
+           </div>
+        </div>
+        <h2 class="text-xl lg:text-3xltext-black font-bold">Aid for Injured in the Quota Movement</h2>
+        <p class="py-4">The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
+        <input type="text" id="donationAmount3" class="mt-2 border rounded px-2 py-1 w-7/8 lg:w-1/2 bg-white" placeholder="Enter Amount">
+        <button onclick="donate(3)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded-md">Donate Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+
+  <!-- Success Modal for Successful Donation -->
+  <div id="successModal" class="fixed inset-0 bg-white bg-opacity-90 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg text-center shadow-md">
+      <h2 class="text-2xl font-bold mb-4">Thank You for Your Donation!</h2>
+      <p>Your generous donation has been processed successfully.</p>
+      <button onclick="closeModal()" class="mt-4 bg-green-500 text-white px-4 py-2 rounded-md">Close</button>
+    </div>
+  </div>
+
+  <!-- History Section -->
+  <section id="historySection" class="hidden mt-8 px-4">
+    <h2 class="text-2xl font-semibold mb-4">Donation History</h2>
+    <ul id="historyList" class="space-y-4">
+      <!-- Transaction history will be added here -->
+    </ul>
+  </section>
+
+  <script>
+    let accountBalance = 5000;
+
+    function updateBalanceDisplay() {
+      document.getElementById("accountBalance").innerText = ` ${accountBalance}`;
+    }
+
+    function donate(cardNumber) {
+  const donationInput = document.getElementById(`donationAmount${cardNumber}`);
+  const donationAmount = parseFloat(donationInput.value);
+  
+  // Input validation
+  if (isNaN(donationAmount) || donationAmount <= 0) {
+    alert("Please enter a valid donation amount.");
+    return;
+  }
+
+  if (donationAmount > accountBalance) {
+    alert("Insufficient balance for this donation.");
+    return;
+  }
+
+  // Update the balance and donation amount
+  accountBalance -= donationAmount;
+  updateBalanceDisplay();
+  let currentAmount = parseFloat(document.querySelector(`.currentAmount${cardNumber}`).innerText) + donationAmount;
+  document.querySelector(`.currentAmount${cardNumber}`).innerText = currentAmount.toFixed(2);
+
+  // Add to history
+  let donationName;
+
+if (cardNumber === 1) {
+  donationName = "Noakhali";
+} else if (cardNumber === 2) {
+  donationName = "Feni";
+} else if (cardNumber === 3) {
+  donationName = "Quata protest injured";
+}
+
+  addToHistory(donationName, donationAmount);
+
+  // Show success modal
+  showModal();
+
+  // Clear input
+  donationInput.value = '';
+}
+
+    function addToHistory(donationName, amount) {
+      const historyList = document.getElementById("historyList");
+      const transaction = document.createElement("li");
+      const date = new Date();
+      transaction.innerHTML = `
+        <div class="bg-gray-100 p-4 rounded-md shadow-md">
+          <p><strong>${amount.toFixed(2)}</strong> -Taka  has been donated for ${donationName}</p>
+          <p class="text-gray-500">${date.toLocaleString()}</p>
+        </div>
+      `;
+      historyList.appendChild(transaction);
+    }
+
+    // Modal functions
+    function showModal() {
+      document.getElementById("successModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("successModal").classList.add("hidden");
+    }
+
+    // Toggle Donation and History section
+    document.getElementById("historyBtn").addEventListener("click", function () {
+      document.getElementById("donationSection").classList.add("hidden");
+      document.getElementById("historySection").classList.remove("hidden");
+      this.classList.add("bg-green-500", "text-white");
+      document.getElementById("donationBtn").classList.remove("bg-green-500", "text-white");
+    });
+
+    document.getElementById("donationBtn").addEventListener("click", function () {
+      document.getElementById("donationSection").classList.remove("hidden");
+      document.getElementById("historySection").classList.add("hidden");
+      this.classList.add("bg-green-500", "text-white");
+      document.getElementById("historyBtn").classList.remove("bg-green-500", "text-white");
+    });
+  </script>
 </body>
 </html>
